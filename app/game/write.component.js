@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../game', '../game/game.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../game/game.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +8,8 @@ System.register(['angular2/core', 'angular2/router', '../game', '../game/game.se
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, game_1, game_service_1;
-    var StartComponent;
+    var core_1, router_1, game_service_1;
+    var GameWriteComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -18,36 +18,28 @@ System.register(['angular2/core', 'angular2/router', '../game', '../game/game.se
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (game_1_1) {
-                game_1 = game_1_1;
-            },
             function (game_service_1_1) {
                 game_service_1 = game_service_1_1;
             }],
         execute: function() {
-            StartComponent = (function () {
-                function StartComponent(_router, _service) {
+            GameWriteComponent = (function () {
+                function GameWriteComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
-                    this.playerNumbers = [3, 4, 5, 6, 7, 8, 9, 10];
-                    this.model = new game_1.Game(3, true);
-                    this.submitted = false;
                 }
-                StartComponent.prototype.startGame = function () {
-                    console.log("H:" + this.model.numberOfPlayers);
-                    this._router.navigate(['Write']);
+                GameWriteComponent.prototype.nextStep = function () {
+                    this._router.navigate(['Pass']);
                 };
-                StartComponent.prototype.onSubmit = function () { this.submitted = true; };
-                StartComponent = __decorate([
+                GameWriteComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/views/start.html'
+                        templateUrl: 'app/views/write.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, game_service_1.GameService])
-                ], StartComponent);
-                return StartComponent;
+                ], GameWriteComponent);
+                return GameWriteComponent;
             })();
-            exports_1("StartComponent", StartComponent);
+            exports_1("GameWriteComponent", GameWriteComponent);
         }
     }
 });
-//# sourceMappingURL=start.component.js.map
+//# sourceMappingURL=write.component.js.map
