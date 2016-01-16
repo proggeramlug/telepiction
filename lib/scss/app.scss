@@ -1,0 +1,18 @@
+@import 'boilerplate';
+@import 'fonts';
+@import "btn";
+@import 'custom';
+
+
+body {
+	margin:0;
+	padding:0;
+	font-family: 'aileron';
+}
+#wrapper {
+	width:100%;
+	background:#3dbb9b;
+
+	height:100vh;
+	
+}

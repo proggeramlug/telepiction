@@ -1,5 +1,5 @@
 
- <img id="logo" src="img/logo.png">
+ <img id="logo" src="lib/img/logo.png">
  <div class="form-group">
   <label for="alterEgo">timed game?</label>
   <input type="checkbox"  class="form-control"
@@ -12,4 +12,4 @@
     <option *ngFor="#p of playerNumbers" [value]="p">{{p}}</option>
   </select>
     </div>
-    <button (click)="startGame()">Start</button>
+    <button (click)="startGame()" class="btn primary">Start</button>
