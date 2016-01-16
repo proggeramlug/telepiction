@@ -9,8 +9,16 @@ import { GameService } from '../game/game.service';
     export class GameWriteComponent {
     constructor(
     private _router: Router,
-    private _service: GameService) { }
+    private _service: GameService) {
+      if (this._service.getGame()==null)
+      {
+          this._router.navigate(["Start"]);
+          return;
+      }
+      this._service.setStep(1);
+    }
     nextStep() {
-       this._router.navigate(['Pass']);
+       console.log("next:"+this._service.getNextStep());
+       this._router.navigate([this._service.getNextStep()]);
     }
     }

@@ -9,7 +9,7 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var GameService;
+    var GameService, game, previousStep;
     return {
         setters:[
             function (core_1_1) {
@@ -19,6 +19,37 @@ System.register(['angular2/core'], function(exports_1) {
             GameService = (function () {
                 function GameService() {
                 }
+                GameService.prototype.setStep = function (i) {
+                    previousStep = game.step;
+                    game.step = i;
+                    console.log("current step: " + i);
+                };
+                GameService.prototype.getPreviousStep = function () {
+                    return previousStep;
+                };
+                GameService.prototype.getNextStep = function () {
+                    if (game.step == 0) {
+                        return 'Write';
+                    }
+                    else if (game.step == 1) {
+                        return 'Pass';
+                    }
+                    else if (game.step == 2) {
+                        return 'Draw';
+                    }
+                    else if (game.step == 3) {
+                        return 'Pass';
+                    }
+                    else if (game.step == 4) {
+                        return 'Write';
+                    }
+                };
+                GameService.prototype.setGame = function (g) {
+                    game = g;
+                };
+                GameService.prototype.getGame = function () {
+                    return game;
+                };
                 GameService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
@@ -26,6 +57,8 @@ System.register(['angular2/core'], function(exports_1) {
                 return GameService;
             })();
             exports_1("GameService", GameService);
+            game = null;
+            previousStep = 0;
         }
     }
 });
