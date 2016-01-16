@@ -39,7 +39,6 @@ DirectoryIndex index.html
     RewriteCond %{ENV:REDIRECT_STATUS} ^$
     RewriteRule ^app\.php(/(.*)|$) %{ENV:BASE}/$2 [R=301,L]
     RewriteRule ^views/(.*)\.html$ static/frontend/views/$1.html [L]
-    RewriteRule ^js/(.*)$ Themes/ReviewSender/frontend/_public/js/$1 [L]
     
 
     # If the requested filename exists, simply serve it.
