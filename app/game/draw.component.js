@@ -26,11 +26,28 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 function GameDrawComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
+                    console.log("init now");
+                    LC.init(document.getElementsByClassName('literally')[0], {
+                        imageURLPrefix: 'img',
+                        primaryColor: '#000',
+                        secondaryColor: '#fff',
+                        backgroundColor: 'transparent',
+                        strokeWidths: [1, 2, 5, 10],
+                        defaultStrokeWidth: 1,
+                        zoomMax: 4,
+                        zoomMin: 1,
+                        toolbarPosition: 'top',
+                        tools: [
+                            LC.tools.Pencil,
+                            LC.tools.Eraser
+                        ],
+                    });
                 }
                 GameDrawComponent.prototype.nextStep = function () {
                     this._router.navigate(['Write']);
                 };
                 GameDrawComponent = __decorate([
+                    // Magic
                     core_1.Component({
                         templateUrl: 'app/views/draw.html'
                     }), 

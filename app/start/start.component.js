@@ -30,11 +30,14 @@ System.register(['angular2/core', 'angular2/router', '../game', '../game/game.se
                     this._router = _router;
                     this._service = _service;
                     this.playerNumbers = [3, 4, 5, 6, 7, 8, 9, 10];
-                    this.model = new game_1.Game(3, true);
+                    this.model = new game_1.Game(3, true, 0, []);
                     this.submitted = false;
+                    this._service.setGame(this.model);
+                    this._service.setStep(0);
                 }
                 StartComponent.prototype.startGame = function () {
-                    console.log("H:" + this.model.numberOfPlayers);
+                    console.log("Starting the game!");
+                    this._service.setGame(this.model);
                     this._router.navigate(['Write']);
                 };
                 StartComponent.prototype.onSubmit = function () { this.submitted = true; };

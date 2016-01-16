@@ -26,9 +26,15 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 function GameWriteComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
+                    if (this._service.getGame() == null) {
+                        this._router.navigate(["Start"]);
+                        return;
+                    }
+                    this._service.setStep(1);
                 }
                 GameWriteComponent.prototype.nextStep = function () {
-                    this._router.navigate(['Pass']);
+                    console.log("next:" + this._service.getNextStep());
+                    this._router.navigate([this._service.getNextStep()]);
                 };
                 GameWriteComponent = __decorate([
                     core_1.Component({
