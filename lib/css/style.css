@@ -1,0 +1,16 @@
+body {
+	margin:0;
+	padding:0;
+}
+#wrapper {
+	width:100%;
+	max-width:414px;
+	background:#3dbb9b;
+	
+}
+#logo {
+	width:200px;
+}
+.yellow {
+	background:#ffde17;
+}
