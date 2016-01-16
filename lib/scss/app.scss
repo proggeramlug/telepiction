@@ -1,3 +1,9 @@
+
+
+$teal: #3dbb9b;
+$yellow: #ffde17;
+
+
 @import 'boilerplate';
 @import 'fonts';
 @import "btn";
@@ -15,4 +21,8 @@ body {
 
 	height:100vh;
 	
+}
+
+img {
+	max-width: 100%;
 }
