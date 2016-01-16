@@ -21,9 +21,13 @@ System.register(['angular2/core', '../game'], function(exports_1) {
         execute: function() {
             StartComponent = (function () {
                 function StartComponent() {
+                    this.playerNumbers = [3, 4, 5, 6, 7, 8, 9, 10];
                     this.model = new game_1.Game(3, true);
                     this.submitted = false;
                 }
+                StartComponent.prototype.startGame = function () {
+                    console.log("H:" + this.model.numberOfPlayers);
+                };
                 StartComponent.prototype.onSubmit = function () { this.submitted = true; };
                 StartComponent = __decorate([
                     core_1.Component({
