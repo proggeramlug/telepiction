@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './start/start.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './start/start.component', './game/draw.component', './game/pass.component', './game/write.component', './game/game.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './start/start.component'],
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, start_component_1;
+    var core_1, router_1, start_component_1, draw_component_1, pass_component_1, write_component_1, game_service_1;
     var AppComponent;
     return {
         setters:[
@@ -20,6 +20,18 @@ System.register(['angular2/core', 'angular2/router', './start/start.component'],
             },
             function (start_component_1_1) {
                 start_component_1 = start_component_1_1;
+            },
+            function (draw_component_1_1) {
+                draw_component_1 = draw_component_1_1;
+            },
+            function (pass_component_1_1) {
+                pass_component_1 = pass_component_1_1;
+            },
+            function (write_component_1_1) {
+                write_component_1 = write_component_1_1;
+            },
+            function (game_service_1_1) {
+                game_service_1 = game_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -28,7 +40,8 @@ System.register(['angular2/core', 'angular2/router', './start/start.component'],
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<div id="wrapper"><router-outlet></router-outlet></div>',
+                        templateUrl: 'app/views/wrapper.html',
+                        providers: [game_service_1.GameService],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }),
                     router_1.RouteConfig([
@@ -37,7 +50,10 @@ System.register(['angular2/core', 'angular2/router', './start/start.component'],
                             name: 'Start',
                             component: start_component_1.StartComponent,
                             useAsDefault: true
-                        }
+                        },
+                        { path: '/draw', name: 'Draw', component: draw_component_1.GameDrawComponent },
+                        { path: '/pass', name: 'Pass', component: pass_component_1.GamePassComponent },
+                        { path: '/write', name: 'Write', component: write_component_1.GameWriteComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
