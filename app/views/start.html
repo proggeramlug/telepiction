@@ -1,6 +1,15 @@
- <img id="logo" src="lib/img/logo.png">
+
+ <img id="logo" src="img/logo.png">
+ <div class="form-group">
+  <label for="alterEgo">timed game?</label>
+  <input type="checkbox"  class="form-control"
+    [(ngModel)]="model.timed">
+</div>
     <div class="form-group">
-  <label for="power">Timed Game: </label>
-  
+  <label for="power">Number of players </label>
+  <select class="form-control"  required
+    [(ngModel)]="model.numberOfPlayers" >
+    <option *ngFor="#p of playerNumbers" [value]="p">{{p}}</option>
+  </select>
     </div>
-    <button (click)="start()">Start</button>
+    <button (click)="startGame()">Start</button>

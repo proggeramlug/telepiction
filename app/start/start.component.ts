@@ -8,9 +8,12 @@ templateUrl: 'app/views/start.html'
 })
 export class StartComponent {
  
-    
+  playerNumbers = [3,4,5,6,7,8,9,10];
   model = new Game(3, true);
   submitted = false;
+  startGame() {
+     console.log("H:"+this.model.numberOfPlayers);
+  }
   onSubmit() { this.submitted = true; }
 }
 
