@@ -24,20 +24,21 @@ import { GameService } from '../game/game.service';
     ngOnInit() {
     	//this._service.setStep(5);
     	var i = 0;
-    	console.log("animation steps:"+this._service.getGame().roundNumber);
-    	for (i = 0; i < this._service.getGame().roundNumber*2+1; i++)
+    	console.log("animation steps:"+(this._service.getGame().roundNumber*2+1));
+    	console.log("images saved:"+(this._service.getGame().images.length));
+    	for (i = 0; i < (this._service.getGame().roundNumber*2+1); i++)
     	{
-    		this.rounds[i] = this._service.getGame().images[Math.round(i/2)].describingWord;
+    		this.rounds[i] = this._service.getGame().images[Math.floor(i/2)].describingWord;
     	}
     	setTimeout(() => { this.initGraphics() }, 1000);
     	this.timer = setTimeout(() => { this.nextAniStep() }, 2000);
     }
     initGraphics() {
     	var i = 0;
-    	for (i = 0; i < this._service.getGame().roundNumber*2+1; i++)
+    	for (i = 0; i < (this._service.getGame().roundNumber*2+1); i++)
     	{
     		if (i%2==1)
-    			(<HTMLInputElement>document.getElementById('ani'+i)).innerHTML = this._service.getGame().images[Math.round(i/2)].imageData;
+    			(<HTMLInputElement>document.getElementById('ani'+i)).innerHTML = this._service.getGame().images[Math.floor(i/2)].imageData;
     	}	
     }
     nextAniStep() {

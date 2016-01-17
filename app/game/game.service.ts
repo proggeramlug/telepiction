@@ -31,6 +31,7 @@
       	 game.roundNumber++;
       	 if (game.roundNumber>(game.numberOfPlayers*2+1))
       	 {
+      	 	console.log("it was: "+game.roundNumber + " now is: "+(game.numberOfPlayers*2+1));
       	 	game.roundNumber = (game.numberOfPlayers*2+1);
       	 }
       }
