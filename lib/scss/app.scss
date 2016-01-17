@@ -3,15 +3,13 @@
 $teal: #3dbb9b;
 $yellow: #ffde17;
 
-
+@import 'vendor/literallyCanvas';
 @import 'boilerplate';
 @import 'fonts';
 @import "btn";
 @import "pages";
 @import 'custom';
 @import 'draw-canvas';
-
-@import 'vendor/literallyCanvas';
 
 
 body {
