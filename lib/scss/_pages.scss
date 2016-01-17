@@ -140,3 +140,40 @@ section#recap {
 		width: 100%;
 	}
 }
+
+// ****************************
+// PAGE: HOW TO PLAY
+// ****************************
+section#howto {
+
+	padding: 15px;
+
+	h2 {
+		font-size: 2em;
+		color: white;
+	}
+
+	h3 {
+		color: white;
+		margin-top: 0;
+		font-size: 1.5em;
+		margin-bottom: 0;
+	}
+	p {
+		margin: 0;
+		font-size: 15px;
+	}
+
+	.row {
+		display: flex;
+		align-items: flex-start;
+
+		.img-wrapper {
+			width: 100%;
+			padding-right: 10px;
+		}
+		.text-wrapper {
+			
+		}
+	}
+}

@@ -633,6 +633,26 @@ section#recap .new-game-wrapper {
   bottom: 10%;
   width: 100%; }
 
+section#howto {
+  padding: 15px; }
+  section#howto h2 {
+    font-size: 2em;
+    color: white; }
+  section#howto h3 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 0; }
+  section#howto p {
+    margin: 0;
+    font-size: 15px; }
+  section#howto .row {
+    display: flex;
+    align-items: flex-start; }
+    section#howto .row .img-wrapper {
+      width: 100%;
+      padding-right: 10px; }
+
 .lc-options, .lc-picker {
   display: none; }
 
@@ -673,7 +693,7 @@ body {
   margin: 0 auto;
   position: relative;
   max-width: 375px;
-  height: 667px;
+  min-height: 500px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
 
 img {
@@ -688,3 +708,10 @@ img {
   width: 100%; }
   .social-icons img {
     width: 53px; }
+
+.no-landscape {
+  display: none; }
+
+@media only screen and (max-device-width: 900px) and (orientation: landscape) {
+  .no-landscape {
+    display: block; } }

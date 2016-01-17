@@ -1,6 +1,6 @@
     <html>
     <head>
-      <title>Telepiction</title>
+      <title>Telepiction - Write. Pass. Draw.</title>
       <base href="/projects/Telepiction/">
       <!-- 1. Load libraries -->
       <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
@@ -12,8 +12,10 @@
       <script src="node_modules/angular2/bundles/router.dev.js"></script>
 
       <link rel="icon" type="image/png" href="lib/img/favicon.png" />
+      <link rel="apple-touch-icon" href="lib/img/logo-400.png">
 
       <meta name="viewport" content="initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
 
       <link rel="stylesheet" href="lib/css/app.css">
       <!-- 2. Configure SystemJS -->
@@ -35,5 +37,9 @@
     <body>
 
       <my-app>Loading...</my-app>
+
+      <div class="no-landscape">
+        NO LANDSCAPE!
+      </div>
     </body>
     </html>
