@@ -717,4 +717,21 @@ img {
 
 @media only screen and (max-device-width: 900px) and (orientation: landscape) {
   .no-landscape {
-    display: block; } }
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bd702c+0,813416+100 */
+    background: #bd702c;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #bd702c 0%, #813416 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #bd702c 0%, #813416 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #bd702c 0%, #813416 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd702c', endColorstr='#813416',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */ } }
