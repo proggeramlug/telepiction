@@ -553,6 +553,17 @@ textarea {
   color: black;
   font-size: 40px; }
 
+.btn.start {
+  padding: 10px 30px; }
+
+.btn.small {
+  font-size: 20px;
+  padding: 5px 10px;
+  text-transform: uppercase; }
+
+a.btn {
+  text-decoration: none; }
+
 #go_forward {
   width: 41px;
   height: 53px;
@@ -586,15 +597,31 @@ textarea {
 .fill-page {
   height: 100%; }
 
-section#start .start-game-wrapper {
-  position: absolute;
-  bottom: 10%;
-  width: 100%; }
 section#start .logo-container {
   position: absolute;
   top: 25%;
-  width: 80%;
+  width: 100%;
   text-align: center; }
+  section#start .logo-container img {
+    width: 80%; }
+section#start .player-count {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center; }
+  section#start .player-count select {
+    background: white;
+    color: black;
+    padding: 20px;
+    font-size: 24px; }
+section#start .start-game-wrapper {
+  position: absolute;
+  top: 63%;
+  width: 100%; }
+section#start .how-to-play-wrapper {
+  position: absolute;
+  bottom: 7%;
+  width: 100%; }
 
 section#write-screen .write-input {
   position: absolute;
@@ -615,6 +642,12 @@ section#pass-screen #pass-animation {
   position: absolute;
   top: 50%;
   margin-top: -160px; }
+
+section#draw-screen .btn-undo {
+  position: absolute;
+  top: 23px;
+  left: 20px;
+  width: 40px; }
 
 .draw-prompt {
   position: absolute;
@@ -643,7 +676,7 @@ section#howto {
   section#howto h2 {
     font-size: 2em;
     color: white;
-    margin-top: 15px;
+    margin-top: 0px;
     margin-bottom: 15px; }
   section#howto h3 {
     color: white;
@@ -656,9 +689,9 @@ section#howto {
   section#howto .row {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 30px; }
+    margin-bottom: 20px; }
     section#howto .row .img-wrapper {
-      flex: 0 0 100px;
+      flex: 0 0 70px;
       padding-right: 10px; }
 
 .lc-options, .lc-picker {
@@ -695,6 +728,9 @@ body {
   padding: 0;
   font-family: 'aileron';
   background: #444; }
+
+select {
+  font-family: 'aileron', helvetica, sans-serif; }
 
 #wrapper {
   width: 100%;

@@ -56,17 +56,41 @@
 // ****************************
 section#start {
 
-	.start-game-wrapper {
-		position: absolute;
-		bottom: 10%;
-		width: 100%;
-	}
-
 	.logo-container {
 		position: absolute;
 		top: 25%;
-		width: 80%;
+		width: 100%;
 		text-align: center;
+
+		img {
+			width: 80%;
+		}
+	}
+
+	.player-count {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		text-align: center;
+
+		select {
+			background: white;
+			color: black;
+			padding: 20px;
+			font-size: 24px;
+		}
+	}
+
+	.start-game-wrapper {
+		position: absolute;
+		top: 63%;
+		width: 100%;
+	}
+
+	.how-to-play-wrapper {
+		position: absolute;
+		bottom: 7%;
+		width: 100%;
 	}
 }
 
@@ -110,6 +134,16 @@ section#pass-screen {
 // ****************************
 // PAGE: DRAW
 // ****************************
+
+section#draw-screen {
+	.btn-undo {
+		position: absolute;
+		top: 23px;
+		left: 20px;
+
+		width: 40px;
+	}
+}
 .draw-prompt {
 	position: absolute;
 	bottom: 0;
@@ -158,7 +192,7 @@ section#howto {
 	h2 {
 		font-size: 2em;
 		color: white;
-		margin-top: 15px;
+		margin-top: 0px;
 		margin-bottom: 15px;
 	}
 
@@ -176,10 +210,10 @@ section#howto {
 	.row {
 		display: flex;
 		align-items: flex-start;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 
 		.img-wrapper {
-			flex: 0 0 100px;
+			flex: 0 0 70px;
 			padding-right: 10px;
 		}
 		.text-wrapper {

@@ -9,7 +9,7 @@
 		<input type="checkbox"  class="form-control"
 		[(ngModel)]="model.timed">
 	</div>-->
-	<div class="form-group">
+	<div class="form-group player-count">
 		<label for="power">Number of players </label>
 		<select class="form-control"  required
 		[(ngModel)]="model.numberOfPlayers" >
@@ -18,8 +18,10 @@
 	</div>
 	
 	<div class="center start-game-wrapper">
-		<button (click)="startGame()" class="btn primary">Start</button><br />
+		<button (click)="startGame()" class="btn primary start">Start</button><br />
+	</div>
 
+	<div class="center how-to-play-wrapper">
 		<a (click)="howTo()" href="javascript:;" >How to Play</a>
 	</div>
 </section>
