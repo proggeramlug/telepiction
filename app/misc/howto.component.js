@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, game_service_1;
-    var GameRecapComponent;
+    var HowtoComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -22,36 +22,24 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 game_service_1 = game_service_1_1;
             }],
         execute: function() {
-            GameRecapComponent = (function () {
-                function GameRecapComponent(_router, _service) {
+            HowtoComponent = (function () {
+                function HowtoComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
-                    this.imageToSee = false;
-                    this.text = "";
-                    if (this._service.getGame() == null) {
-                        this._router.navigate(["Start"]);
-                        return;
-                    }
                 }
-                GameRecapComponent.prototype.ngOnInit = function () {
-                    this._service.setStep(5);
+                HowtoComponent.prototype.back = function () {
+                    this._router.navigate(['Start']);
                 };
-                GameRecapComponent.prototype.startGame = function () {
-                    this._router.navigate(["Start"]);
-                };
-                GameRecapComponent.prototype.startAni = function () {
-                    this._router.navigate(["Animation"]);
-                };
-                GameRecapComponent = __decorate([
+                HowtoComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/views/recap.html'
+                        templateUrl: 'app/views/howto.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, game_service_1.GameService])
-                ], GameRecapComponent);
-                return GameRecapComponent;
+                ], HowtoComponent);
+                return HowtoComponent;
             })();
-            exports_1("GameRecapComponent", GameRecapComponent);
+            exports_1("HowtoComponent", HowtoComponent);
         }
     }
 });
-//# sourceMappingURL=recap.component.js.map
+//# sourceMappingURL=howto.component.js.map

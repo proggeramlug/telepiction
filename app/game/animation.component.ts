@@ -4,11 +4,13 @@ import { Game }    from '../game';
 import { GameService } from '../game/game.service';
 
     @Component({
-      templateUrl: 'app/views/recap.html'
+      templateUrl: 'app/views/animation.html'
     })
-    export class GameRecapComponent {
+    export class GameAnimationComponent {
     imageToSee = false;
     text = "";
+    rounds = [];
+    currentStep = 0;
     constructor(
     private _router: Router,
     private _service: GameService) {
@@ -19,13 +21,12 @@ import { GameService } from '../game/game.service';
       }
     }
     ngOnInit() {
-    	this._service.setStep(5);
-    	
+    	//this._service.setStep(5);
+    	var i = 0;
+    	for (i = 0; i < this._service.getGame().roundNumber*2; i++)
+    	{
+    		this.rounds[i] = this._service.getGame().images[i/2].describingWord;
+    	}
     }
-    startGame() {
-       this._router.navigate(["Start"]);
-    }
-    startAni() {
-       this._router.navigate(["Animation"]);
-    }
+    
     }
