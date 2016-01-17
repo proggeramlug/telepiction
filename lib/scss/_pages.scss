@@ -151,6 +151,8 @@ section#howto {
 	h2 {
 		font-size: 2em;
 		color: white;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 
 	h3 {
@@ -167,9 +169,11 @@ section#howto {
 	.row {
 		display: flex;
 		align-items: flex-start;
+		margin-bottom: 30px;
 
 		.img-wrapper {
-			width: 100%;
+			// width: 110px;
+			flex: 0 0 100px;
 			padding-right: 10px;
 		}
 		.text-wrapper {
