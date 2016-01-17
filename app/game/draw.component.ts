@@ -39,6 +39,9 @@ declare var LC:any; // Magic
 		      ]
 		});
     }
+    undo() {
+    	this.lc.undo();
+    }
     nextStep() {
     	var img = this.lc.getSVGString();
     	this.lc = null;

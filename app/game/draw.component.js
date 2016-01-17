@@ -50,6 +50,9 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                         ]
                     });
                 };
+                GameDrawComponent.prototype.undo = function () {
+                    this.lc.undo();
+                };
                 GameDrawComponent.prototype.nextStep = function () {
                     var img = this.lc.getSVGString();
                     this.lc = null;
