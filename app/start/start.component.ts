@@ -18,6 +18,10 @@ export class StartComponent {
     this._service.setGame(this.model);
     this._service.setStep(0);
     }
+    howTo() {
+    
+      this._router.navigate(['Howto']);
+    }
   startGame() {
      console.log("Starting the game!");
      this._service.setGame(this.model);

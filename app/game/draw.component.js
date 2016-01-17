@@ -54,7 +54,7 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                     this.lc.undo();
                 };
                 GameDrawComponent.prototype.nextStep = function () {
-                    var img = this.lc.getSVGString();
+                    var img = this.lc.getSVGString({ scaleDownRetina: true });
                     this.lc = null;
                     document.getElementsByClassName('literally')[0].innerHTML = "";
                     this._service.setImageForCurrentRound(img);

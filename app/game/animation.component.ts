@@ -11,6 +11,7 @@ import { GameService } from '../game/game.service';
     text = "";
     rounds = [];
     currentStep = 0;
+    timer;
     constructor(
     private _router: Router,
     private _service: GameService) {
@@ -23,10 +24,29 @@ import { GameService } from '../game/game.service';
     ngOnInit() {
     	//this._service.setStep(5);
     	var i = 0;
-    	for (i = 0; i < this._service.getGame().roundNumber*2; i++)
+    	console.log("animation steps:"+this._service.getGame().roundNumber);
+    	for (i = 0; i < this._service.getGame().roundNumber*2+1; i++)
     	{
-    		this.rounds[i] = this._service.getGame().images[i/2].describingWord;
+    		this.rounds[i] = this._service.getGame().images[Math.round(i/2)].describingWord;
     	}
+    	setTimeout(() => { this.initGraphics() }, 1000);
+    	this.timer = setTimeout(() => { this.nextAniStep() }, 2000);
+    }
+    initGraphics() {
+    	var i = 0;
+    	for (i = 0; i < this._service.getGame().roundNumber*2+1; i++)
+    	{
+    		if (i%2==1)
+    			(<HTMLInputElement>document.getElementById('ani'+i)).innerHTML = this._service.getGame().images[Math.round(i/2)].imageData;
+    	}	
+    }
+    nextAniStep() {
+    	this.currentStep++;
+    	console.log("step:"+this.currentStep);
+    	if (this.currentStep<(this._service.getGame().roundNumber*2+1))
+    		this.timer = setTimeout(() => { this.nextAniStep() }, 1500);
+    	else
+    		this._router.navigate(["Recap"]);
     }
     
     }

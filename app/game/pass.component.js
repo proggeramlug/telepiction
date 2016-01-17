@@ -34,7 +34,6 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 }
                 GamePassComponent.prototype.ngOnInit = function () {
                     this._service.nextStep();
-                    this.passGif = "";
                     this.passGif = "lib/img/pass2.gif?t=" + Date.now();
                 };
                 GamePassComponent.prototype.nextStep = function () {

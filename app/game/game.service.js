@@ -42,6 +42,9 @@ System.register(['angular2/core', '../game-image'], function(exports_1) {
                 };
                 GameService.prototype.nextRound = function () {
                     game.roundNumber++;
+                    if (game.roundNumber > (game.numberOfPlayers * 2 + 1)) {
+                        game.roundNumber = (game.numberOfPlayers * 2 + 1);
+                    }
                 };
                 GameService.prototype.setImageForCurrentRound = function (img) {
                     game.images[game.roundNumber].imageData = img;
@@ -57,7 +60,7 @@ System.register(['angular2/core', '../game-image'], function(exports_1) {
                     return previousStep;
                 };
                 GameService.prototype.getNextStep = function () {
-                    if (game.screenChanges == (game.numberOfPlayers * 2 + 1)) {
+                    if (game.screenChanges == (game.numberOfPlayers * 2)) {
                         return 'Recap';
                     }
                     if (game.step == 0) {

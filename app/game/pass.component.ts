@@ -19,7 +19,6 @@ import { GameService } from '../game/game.service';
     }
      ngOnInit() {
        this._service.nextStep();
-       this.passGif = "";
        this.passGif = "lib/img/pass2.gif?t="+Date.now();
      }
     nextStep() {

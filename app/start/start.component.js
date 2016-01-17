@@ -35,6 +35,9 @@ System.register(['angular2/core', 'angular2/router', '../game', '../game/game.se
                     this._service.setGame(this.model);
                     this._service.setStep(0);
                 }
+                StartComponent.prototype.howTo = function () {
+                    this._router.navigate(['Howto']);
+                };
                 StartComponent.prototype.startGame = function () {
                     console.log("Starting the game!");
                     this._service.setGame(this.model);

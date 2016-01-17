@@ -36,11 +36,31 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                     }
                 }
                 GameAnimationComponent.prototype.ngOnInit = function () {
+                    var _this = this;
                     //this._service.setStep(5);
                     var i = 0;
-                    for (i = 0; i < this._service.getGame().roundNumber * 2; i++) {
-                        this.rounds[i] = this._service.getGame().images[i / 2].describingWord;
+                    console.log("animation steps:" + this._service.getGame().roundNumber);
+                    for (i = 0; i < this._service.getGame().roundNumber * 2 + 1; i++) {
+                        this.rounds[i] = this._service.getGame().images[Math.round(i / 2)].describingWord;
                     }
+                    setTimeout(function () { _this.initGraphics(); }, 1000);
+                    this.timer = setTimeout(function () { _this.nextAniStep(); }, 2000);
+                };
+                GameAnimationComponent.prototype.initGraphics = function () {
+                    var i = 0;
+                    for (i = 0; i < this._service.getGame().roundNumber * 2 + 1; i++) {
+                        if (i % 2 == 1)
+                            document.getElementById('ani' + i).innerHTML = this._service.getGame().images[Math.round(i / 2)].imageData;
+                    }
+                };
+                GameAnimationComponent.prototype.nextAniStep = function () {
+                    var _this = this;
+                    this.currentStep++;
+                    console.log("step:" + this.currentStep);
+                    if (this.currentStep < (this._service.getGame().roundNumber * 2 + 1))
+                        this.timer = setTimeout(function () { _this.nextAniStep(); }, 1500);
+                    else
+                        this._router.navigate(["Recap"]);
                 };
                 GameAnimationComponent = __decorate([
                     core_1.Component({

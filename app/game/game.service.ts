@@ -29,6 +29,10 @@
       nextRound()
       {
       	 game.roundNumber++;
+      	 if (game.roundNumber>(game.numberOfPlayers*2+1))
+      	 {
+      	 	game.roundNumber = (game.numberOfPlayers*2+1);
+      	 }
       }
       setImageForCurrentRound(img)
       {
@@ -47,7 +51,7 @@
       	return previousStep;
       }
       getNextStep() {
-      if (game.screenChanges==(game.numberOfPlayers*2+1))
+      if (game.screenChanges==(game.numberOfPlayers*2))
       {
       	return 'Recap';
       }

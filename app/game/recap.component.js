@@ -35,6 +35,7 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 }
                 GameRecapComponent.prototype.ngOnInit = function () {
                     this._service.setStep(5);
+                    this._service.nextRound();
                 };
                 GameRecapComponent.prototype.startGame = function () {
                     this._router.navigate(["Start"]);

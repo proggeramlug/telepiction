@@ -43,7 +43,7 @@ declare var LC:any; // Magic
     	this.lc.undo();
     }
     nextStep() {
-    	var img = this.lc.getSVGString();
+    	var img = this.lc.getSVGString({scaleDownRetina:true});
     	this.lc = null;
     	(<HTMLInputElement>document.getElementsByClassName('literally')[0]).innerHTML = "";
    		this._service.setImageForCurrentRound(img);

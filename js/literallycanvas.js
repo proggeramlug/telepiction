@@ -3018,13 +3018,15 @@ util = {
     maxY = rects[0].y + rects[0].height;
     for (_i = 0, _len = rects.length; _i < _len; _i++) {
       rect = rects[_i];
-      minX = Math.floor(Math.min(rect.x, minX));
-      minY = Math.floor(Math.min(rect.y, minY));
+      minX = 0; //Math.floor(Math.min(rect.x, minX));
+      minY = 0; //Math.floor(Math.min(rect.y, minY));
       maxX = Math.ceil(Math.max(maxX, rect.x + rect.width));
       maxY = Math.ceil(Math.max(maxY, rect.y + rect.height));
     }
     minX = width ? 0 : minX;
     minY = height ? 0 : minY;
+    minX = 0;
+    minY = 0;
     maxX = width || maxX;
     maxY = height || maxY;
     return {

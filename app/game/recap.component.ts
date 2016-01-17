@@ -20,6 +20,7 @@ import { GameService } from '../game/game.service';
     }
     ngOnInit() {
     	this._service.setStep(5);
+    	this._service.nextRound();
     	
     }
     startGame() {

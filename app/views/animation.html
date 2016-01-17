@@ -1,5 +1,3 @@
 
-	<div class="round" *ngFor="#img of rounds #i=index" >
-	<div [class.hidden]="currentStep==i" id="ani{{i}}" alt="" class="photo_bg"><span ngIf="i%2==0" id="text{{i}}">{{img}}</span></div>
-	</div>
+	<div *ngFor="#img of rounds #i=index" [class.hidden]="currentStep!=i" id="ani{{i}}" alt="" class="animationFrame"><span *ngIf="i%2==0" id="text{{i}}">{{img}}</span></div>
 	
