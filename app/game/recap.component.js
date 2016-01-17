@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, game_service_1;
-    var GamePassComponent;
+    var GameRecapComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -22,34 +22,33 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 game_service_1 = game_service_1_1;
             }],
         execute: function() {
-            GamePassComponent = (function () {
-                function GamePassComponent(_router, _service) {
+            GameRecapComponent = (function () {
+                function GameRecapComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
-                    this.passGif = "lib/img/pass2.gif";
+                    this.imageToSee = false;
+                    this.text = "";
                     if (this._service.getGame() == null) {
                         this._router.navigate(["Start"]);
                         return;
                     }
                 }
-                GamePassComponent.prototype.ngOnInit = function () {
-                    this._service.nextStep();
-                    this.passGif = "";
-                    this.passGif = "lib/img/pass2.gif?t=" + Date.now();
+                GameRecapComponent.prototype.ngOnInit = function () {
+                    this._service.setStep(5);
                 };
-                GamePassComponent.prototype.nextStep = function () {
-                    this._router.navigate([this._service.getNextStep()]);
+                GameRecapComponent.prototype.nextStep = function () {
+                    this._router.navigate(["Start"]);
                 };
-                GamePassComponent = __decorate([
+                GameRecapComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/views/pass.html'
+                        templateUrl: 'app/views/recap.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, game_service_1.GameService])
-                ], GamePassComponent);
-                return GamePassComponent;
+                ], GameRecapComponent);
+                return GameRecapComponent;
             })();
-            exports_1("GamePassComponent", GamePassComponent);
+            exports_1("GameRecapComponent", GameRecapComponent);
         }
     }
 });
-//# sourceMappingURL=pass.component.js.map
+//# sourceMappingURL=recap.component.js.map

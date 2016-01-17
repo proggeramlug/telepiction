@@ -4,7 +4,7 @@ System.register([], function(exports_1) {
         setters:[],
         execute: function() {
             Game = (function () {
-                function Game(numberOfPlayers, timed, step, // 0 = not started, 1 = write, 2 = pass, 3 = draw, 4 = pass
+                function Game(numberOfPlayers, timed, step, // 0 = not started, 1 = write, 2 = pass, 3 = draw, 4 = pass, 5 = recap
                     images, roundNumber) {
                     this.numberOfPlayers = numberOfPlayers;
                     this.timed = timed;

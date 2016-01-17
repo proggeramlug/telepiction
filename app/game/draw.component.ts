@@ -29,14 +29,13 @@ declare var LC:any; // Magic
 		primaryColor: '#000',
 		secondaryColor: '#fff',
 		backgroundColor: 'transparent',
-		strokeWidths: [1,2,5,10],
-		defaultStrokeWidth: 1,
+		strokeWidths: [5],
+		defaultStrokeWidth: 5,
 		zoomMax: 4,
 		zoomMin: 1,
 		toolbarPosition: 'top',
 		tools: [
-		        LC.tools.Pencil,
-		        LC.tools.Eraser
+		        LC.tools.Pencil
 		      ]
 		});
     }

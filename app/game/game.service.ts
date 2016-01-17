@@ -24,6 +24,7 @@
       nextStep()
       {
          this.setStep(game.step+1);
+         this.nextRound();
       }
       nextRound()
       {
@@ -46,6 +47,10 @@
       	return previousStep;
       }
       getNextStep() {
+      if (game.roundNumber==(game.numberOfPlayers*2+1))
+      {
+      	return 'Recap';
+      }
        if (game.step == 0)
        {
          return 'Write';

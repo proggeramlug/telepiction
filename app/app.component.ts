@@ -4,6 +4,7 @@ import {StartComponent}   from './start/start.component';
 import {GameDrawComponent}     from './game/draw.component';
 import {GamePassComponent}   from './game/pass.component';
 import {GameWriteComponent}   from './game/write.component';
+import {GameRecapComponent}   from './game/recap.component';
 import {GameService}           from './game/game.service';
 
     @Component({
@@ -22,7 +23,8 @@ import {GameService}           from './game/game.service';
   },
   {path:'/draw', name: 'Draw', component: GameDrawComponent},
   {path:'/pass',        name: 'Pass',       component: GamePassComponent},
-  {path:'/write',      name: 'Write',   component: GameWriteComponent}
+  {path:'/write',      name: 'Write',   component: GameWriteComponent},
+  {path:'/recap',      name: 'Recap',   component: GameRecapComponent}
 
 ])
     export class AppComponent { }

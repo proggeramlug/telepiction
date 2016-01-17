@@ -41,9 +41,6 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                     }
                 };
                 GameWriteComponent.prototype.nextStep = function () {
-                    if (this.imageToSee) {
-                        this._service.nextRound();
-                    }
                     this._service.setTextForCurrentRound(this.text);
                     this._router.navigate([this._service.getNextStep()]);
                 };

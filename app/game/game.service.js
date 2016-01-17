@@ -38,6 +38,7 @@ System.register(['angular2/core', '../game-image'], function(exports_1) {
                 };
                 GameService.prototype.nextStep = function () {
                     this.setStep(game.step + 1);
+                    this.nextRound();
                 };
                 GameService.prototype.nextRound = function () {
                     game.roundNumber++;
@@ -56,6 +57,9 @@ System.register(['angular2/core', '../game-image'], function(exports_1) {
                     return previousStep;
                 };
                 GameService.prototype.getNextStep = function () {
+                    if (game.roundNumber == (game.numberOfPlayers * 2 + 1)) {
+                        return 'Recap';
+                    }
                     if (game.step == 0) {
                         return 'Write';
                     }

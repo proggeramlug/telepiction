@@ -4,25 +4,25 @@ import { Game }    from '../game';
 import { GameService } from '../game/game.service';
 
     @Component({
-      templateUrl: 'app/views/pass.html'
+      templateUrl: 'app/views/recap.html'
     })
-    export class GamePassComponent {
-    passGif = "lib/img/pass2.gif";
+    export class GameRecapComponent {
+    imageToSee = false;
+    text = "";
     constructor(
     private _router: Router,
     private _service: GameService) {
-    	if (this._service.getGame()==null)
-      	{
+      if (this._service.getGame()==null)
+      {
           this._router.navigate(["Start"]);
           return;
-        }
+      }
     }
-     ngOnInit() {
-       this._service.nextStep();
-       this.passGif = "";
-       this.passGif = "lib/img/pass2.gif?t="+Date.now();
-     }
+    ngOnInit() {
+    	this._service.setStep(5);
+    	
+    }
     nextStep() {
-       this._router.navigate([this._service.getNextStep()]);
+       this._router.navigate(["Start"]);
     }
     }

@@ -27,9 +27,7 @@ import { GameService } from '../game/game.service';
     	}
     }
     nextStep() {
-       if (this.imageToSee) {
-       	this._service.nextRound();
-       }
+       
        this._service.setTextForCurrentRound(this.text);
        this._router.navigate([this._service.getNextStep()]);
     }
