@@ -16,6 +16,11 @@
 
       <meta name="viewport" content="initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+      <script type="text/javascript">
+        document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+      </script>
 
       <link rel="stylesheet" href="lib/css/app.css">
       <!-- 2. Configure SystemJS -->
@@ -39,9 +44,10 @@
       <my-app>Loading...</my-app>
 
       <div class="no-landscape">
-        <div class="no-landscape-container">
+        <div class="no-landscape-container center">
+          <img src="lib/img/landscape/crying.png" alt="">
           <h3>Landscape is a bust.</h3>
-          <p>Telepiction works as a portrait app.</p>
+          <p>Telepiction only works as a portrait app.</p>
         </div>
       </div>
     </body>

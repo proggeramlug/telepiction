@@ -18,7 +18,7 @@
 
 .literally.toolbar-at-top .lc-drawing {
   bottom: 0;
-  top: 31px; }
+  top: 0; }
 
 .literally.toolbar-at-top .lc-options {
   top: 0;
@@ -590,6 +590,11 @@ section#start .start-game-wrapper {
   position: absolute;
   bottom: 10%;
   width: 100%; }
+section#start .logo-container {
+  position: absolute;
+  top: 25%;
+  width: 80%;
+  text-align: center; }
 
 section#write-screen .write-input {
   position: absolute;
@@ -724,6 +729,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
+    color: white;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bd702c+0,813416+100 */
     background: #bd702c;
     /* Old browsers */
@@ -734,4 +740,9 @@ img {
     background: linear-gradient(135deg, #bd702c 0%, #813416 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd702c', endColorstr='#813416',GradientType=1 );
-    /* IE6-9 fallback on horizontal gradient */ } }
+    /* IE6-9 fallback on horizontal gradient */ }
+    .no-landscape h3 {
+      font-size: 1.8em;
+      margin-bottom: 0; }
+    .no-landscape p {
+      margin: 0; } }

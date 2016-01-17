@@ -65,6 +65,16 @@ img {
 		right:0;
 		bottom:0;
 
+		color: white;
+
+		h3 {
+			font-size: 1.8em;
+			margin-bottom: 0;
+		}
+		p {
+			margin: 0;
+		}
+
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bd702c+0,813416+100 */
 		background: rgb(189,112,44); /* Old browsers */
 		background: -moz-linear-gradient(-45deg,  rgba(189,112,44,1) 0%, rgba(129,52,22,1) 100%); /* FF3.6-15 */
