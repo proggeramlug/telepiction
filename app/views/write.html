@@ -1,8 +1,8 @@
 
 <div class="super-imposed-content">
-	<input type="text" placeholder="write something down" />
+	<input [(ngModel)]="text" type="text" placeholder="write something down" />
 	<button (click)="nextStep()" id="go_forward"><img src="lib/img/icon_forward.png"></button>
 </div>
 
 
-<img src="http://www.placecage.com/375/667" alt="" class="photo_bg">
+<div [class.hidden]="!imageToSee" alt="" class="photo_bg"></div>

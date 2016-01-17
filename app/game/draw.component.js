@@ -26,8 +26,16 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 function GameDrawComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
-                    console.log("init now");
-                    LC.init(document.getElementsByClassName('literally')[0], {
+                    this.drawText = "";
+                    if (this._service.getGame() == null) {
+                        this._router.navigate(["Start"]);
+                        return;
+                    }
+                }
+                GameDrawComponent.prototype.ngOnInit = function () {
+                    this._service.setStep(3);
+                    this.drawText = this._service.getCurrentDrawingText();
+                    this.lc = LC.init(document.getElementsByClassName('literally')[0], {
                         imageURLPrefix: 'img',
                         primaryColor: '#000',
                         secondaryColor: '#fff',
@@ -40,11 +48,15 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                         tools: [
                             LC.tools.Pencil,
                             LC.tools.Eraser
-                        ],
+                        ]
                     });
-                }
+                };
                 GameDrawComponent.prototype.nextStep = function () {
-                    this._router.navigate(['Write']);
+                    var img = this.lc.getSVGString();
+                    this.lc = null;
+                    document.getElementsByClassName('literally')[0].innerHTML = "";
+                    this._service.setImageForCurrentRound(img);
+                    this._router.navigate([this._service.getNextStep()]);
                 };
                 GameDrawComponent = __decorate([
                     // Magic

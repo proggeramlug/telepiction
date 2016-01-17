@@ -7,6 +7,8 @@ import { GameService } from '../game/game.service';
       templateUrl: 'app/views/write.html'
     })
     export class GameWriteComponent {
+    imageToSee = false;
+    text = "";
     constructor(
     private _router: Router,
     private _service: GameService) {
@@ -15,10 +17,20 @@ import { GameService } from '../game/game.service';
           this._router.navigate(["Start"]);
           return;
       }
-      this._service.setStep(1);
+    }
+    ngOnInit() {
+    	this._service.setStep(1);
+    	this.imageToSee = this._service.getGame().images[this._service.getGame().roundNumber]==undefined?false:true;
+    	if (this.imageToSee) {
+    		
+    		(<HTMLInputElement>document.getElementsByClassName('photo_bg')[0]).innerHTML = this._service.getGame().images[this._service.getGame().roundNumber].imageData;
+    	}
     }
     nextStep() {
-       console.log("next:"+this._service.getNextStep());
+       if (this.imageToSee) {
+       	this._service.nextRound();
+       }
+       this._service.setTextForCurrentRound(this.text);
        this._router.navigate([this._service.getNextStep()]);
     }
     }

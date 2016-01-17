@@ -26,9 +26,16 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 function GamePassComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
+                    if (this._service.getGame() == null) {
+                        this._router.navigate(["Start"]);
+                        return;
+                    }
                 }
+                GamePassComponent.prototype.ngOnInit = function () {
+                    this._service.nextStep();
+                };
                 GamePassComponent.prototype.nextStep = function () {
-                    this._router.navigate(['Draw']);
+                    this._router.navigate([this._service.getNextStep()]);
                 };
                 GamePassComponent = __decorate([
                     core_1.Component({

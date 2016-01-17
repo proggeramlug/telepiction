@@ -8,11 +8,42 @@
       {
       previousStep = game.step;
       game.step = i;
-      console.log("current step: "+i);
+      console.log("current step: "+i+" current round: "+game.roundNumber);
+      }
+      setTextForCurrentRound(text : string)
+      {
+        console.log("the text for this round is: "+text);
+      	if (game.images[game.roundNumber]==undefined)
+      	{
+      		game.images[game.roundNumber] = new GameImage(text,null);
+      	}
+      	else {
+      		game.images[game.roundNumber].describingWord = text;
+      	}
+      }
+      nextStep()
+      {
+         this.setStep(game.step+1);
+      }
+      nextRound()
+      {
+      	 game.roundNumber++;
+      }
+      setImageForCurrentRound(img)
+      {
+      	game.images[game.roundNumber].imageData = img;
+      }
+      getCurrentDrawingText() {
+        if (game.images[game.roundNumber])
+      	{
+      		console.log("word is: "+game.images[game.roundNumber].describingWord);
+      		return game.images[game.roundNumber].describingWord;
+      	}
+      	return "";
       }
       getPreviousStep()
       {
-      return previousStep;
+      	return previousStep;
       }
       getNextStep() {
        if (game.step == 0)

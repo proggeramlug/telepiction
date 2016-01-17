@@ -6,6 +6,7 @@
         public numberOfPlayers: number,
         public timed: boolean,
         public step: number, // 0 = not started, 1 = write, 2 = pass, 3 = draw, 4 = pass
-        public images: GameImage[]
+        public images: GameImage[],
+        public roundNumber: number
       ) {  }
     }

@@ -26,14 +26,25 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                 function GameWriteComponent(_router, _service) {
                     this._router = _router;
                     this._service = _service;
+                    this.imageToSee = false;
+                    this.text = "";
                     if (this._service.getGame() == null) {
                         this._router.navigate(["Start"]);
                         return;
                     }
-                    this._service.setStep(1);
                 }
+                GameWriteComponent.prototype.ngOnInit = function () {
+                    this._service.setStep(1);
+                    this.imageToSee = this._service.getGame().images[this._service.getGame().roundNumber] == undefined ? false : true;
+                    if (this.imageToSee) {
+                        document.getElementsByClassName('photo_bg')[0].innerHTML = this._service.getGame().images[this._service.getGame().roundNumber].imageData;
+                    }
+                };
                 GameWriteComponent.prototype.nextStep = function () {
-                    console.log("next:" + this._service.getNextStep());
+                    if (this.imageToSee) {
+                        this._service.nextRound();
+                    }
+                    this._service.setTextForCurrentRound(this.text);
                     this._router.navigate([this._service.getNextStep()]);
                 };
                 GameWriteComponent = __decorate([

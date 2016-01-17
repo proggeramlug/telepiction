@@ -30,7 +30,7 @@ System.register(['angular2/core', 'angular2/router', '../game', '../game/game.se
                     this._router = _router;
                     this._service = _service;
                     this.playerNumbers = [3, 4, 5, 6, 7, 8, 9, 10];
-                    this.model = new game_1.Game(3, true, 0, []);
+                    this.model = new game_1.Game(3, true, 0, [], 0);
                     this.submitted = false;
                     this._service.setGame(this.model);
                     this._service.setStep(0);

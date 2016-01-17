@@ -8,11 +8,22 @@ declare var LC:any; // Magic
       templateUrl: 'app/views/draw.html'
     })
     export class GameDrawComponent {
+    drawText = "";
+    lc;
     constructor(
     private _router: Router,
     private _service: GameService) {
-    console.log("init now");
-    	LC.init(document.getElementsByClassName('literally')[0], {
+    	if (this._service.getGame()==null)
+      	{
+          this._router.navigate(["Start"]);
+          return;
+        }
+        
+    }
+    ngOnInit() {
+    	this._service.setStep(3);
+    	this.drawText = this._service.getCurrentDrawingText();
+    	this.lc = LC.init(document.getElementsByClassName('literally')[0], {
 		imageURLPrefix: 'img',
 
 		primaryColor: '#000',
@@ -26,11 +37,14 @@ declare var LC:any; // Magic
 		tools: [
 		        LC.tools.Pencil,
 		        LC.tools.Eraser
-		      ],
-
-	})
+		      ]
+		});
     }
     nextStep() {
-       this._router.navigate(['Write']);
+    	var img = this.lc.getSVGString();
+    	this.lc = null;
+    	(<HTMLInputElement>document.getElementsByClassName('literally')[0]).innerHTML = "";
+   		this._service.setImageForCurrentRound(img);
+    	this._router.navigate([this._service.getNextStep()]);
     }
     }

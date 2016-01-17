@@ -9,8 +9,17 @@ import { GameService } from '../game/game.service';
     export class GamePassComponent {
     constructor(
     private _router: Router,
-    private _service: GameService) { }
+    private _service: GameService) {
+    	if (this._service.getGame()==null)
+      	{
+          this._router.navigate(["Start"]);
+          return;
+        }
+    }
+     ngOnInit() {
+       this._service.nextStep();
+     }
     nextStep() {
-       this._router.navigate(['Draw']);
+       this._router.navigate([this._service.getNextStep()]);
     }
     }

@@ -1,6 +1,6 @@
     export class GameImage {
       constructor(
         public describingWord: string,
-        public imageData: string
+        public imageData
       ) {  }
     }
