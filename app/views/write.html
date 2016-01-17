@@ -1,8 +1,9 @@
 
-<div class="super-imposed-content">
-	<input [(ngModel)]="text" type="text" placeholder="write something down" />
-	<button (click)="nextStep()" id="go_forward"><img src="lib/img/icon_forward.png"></button>
-</div>
+<section id="write-screen" class="bg-white fill-page">
+	<div class="super-imposed-content">
+		<textarea [(ngModel)]="text" name="" cols="30" rows="1" placeholder="Write something" class="write-input"></textarea>
+		<button (click)="nextStep()" id="go_forward"><img src="lib/img/icon_forward.png"></button>
+	</div>
 
-
-<div [class.hidden]="!imageToSee" alt="" class="photo_bg"></div>
+	<div [class.hidden]="!imageToSee" alt="" class="photo_bg"></div>
+</section>

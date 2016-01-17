@@ -7,8 +7,11 @@ $yellow: #ffde17;
 @import 'boilerplate';
 @import 'fonts';
 @import "btn";
-@import "ui";
+@import "pages";
 @import 'custom';
+@import 'draw-canvas';
+
+@import 'vendor/literallyCanvas';
 
 
 body {
@@ -34,28 +37,6 @@ img {
 	max-width: 100%;
 }
 
-section#recap {
-	background: white;
-	height: 100%;
-
-	.view-recap-wrapper {
-		position: absolute;
-		top: 10%;
-		width: 100%;
-	}
-	.view-recap {
-		.bolt {
-			width: 41px;
-		}
-	}
-
-	.new-game-wrapper {
-		position: absolute;
-		bottom: 10%;
-		width: 100%;
-	}
-}
-
 .center {
 	text-align: center;
 }
@@ -66,16 +47,5 @@ section#recap {
 	width: 100%;
 	img {
 		width: 53px;
-	}
-}
-
-section#start {
-	height: 100%;
-	background: $teal;
-
-	.start-game-wrapper {
-		position: absolute;
-		bottom: 10%;
-		width: 100%;
 	}
 }

@@ -1,0 +1,142 @@
+#go_forward {
+	width: 41px;
+	height: 53px;
+
+	background: none;
+	border: 0;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+
+
+
+// ****************************
+// UTILITIES
+// ****************************
+
+
+
+// photo backgrounds on the page
+.photo_bg {
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+
+	&.faded {
+		filter: grayscale(100%);
+		opacity: .1;
+	}
+}
+
+.super-imposed-content {
+	z-index: 99;
+	position: relative;
+	height: 100%;
+}
+
+.bg-white {
+		background: white;
+	}
+
+.bg-teal {
+	background: $teal;
+}
+
+.fill-page {
+	height: 100%;
+}
+
+// ****************************
+// PAGE: START
+// ****************************
+section#start {
+
+	.start-game-wrapper {
+		position: absolute;
+		bottom: 10%;
+		width: 100%;
+	}
+}
+
+// ****************************
+// PAGE: WRITE
+// ****************************
+section#write-screen {
+	.write-input {
+		position: absolute;
+	    bottom: 40%;
+	    background: rgba(0,0,0,.8);
+	    border: 0;
+	    padding: 10px;
+	    width: 100%;
+	    color: white;
+	    font-family: 'aileron', helvetica, sans-serif;
+	    font-size: 17px;
+
+	    overflow: hidden;
+	    outline: none;
+	    resize: none;
+	}
+}
+
+
+// ****************************
+// PAGE: PASS
+// ****************************
+
+section#pass-screen {
+	#pass-animation {
+		margin: 0 auto;
+
+		position: absolute;
+		top:50%;
+		margin-top: -160px;
+	}
+}
+
+
+// ****************************
+// PAGE: DRAW
+// ****************************
+.draw-prompt {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+
+	font-weight: normal;
+
+	color: white;
+	background: rgba(0,0,0,.8);
+}
+
+
+// ****************************
+// PAGE: RECAP
+// ****************************
+section#recap {
+
+	.view-recap-wrapper {
+		position: absolute;
+		top: 10%;
+		width: 100%;
+	}
+	.view-recap {
+		.bolt {
+			width: 41px;
+		}
+	}
+
+	.new-game-wrapper {
+		position: absolute;
+		bottom: 10%;
+		width: 100%;
+	}
+}

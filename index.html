@@ -1,39 +1,37 @@
     <html>
-      <head>
-        <title>Telepiction</title>
-       <base href="/projects/Telepiction/">
-        <!-- 1. Load libraries -->
-        <link href="css/literallycanvas.css" rel="stylesheet">
-<link href="css/custom.css" rel="stylesheet">
-<script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
-<script src="js/literallycanvas.js"></script>
-        <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-        <script src="node_modules/systemjs/dist/system.src.js"></script>
-        <script src="node_modules/rxjs/bundles/Rx.js"></script>
-        <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-        <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <head>
+      <title>Telepiction</title>
+      <base href="/projects/Telepiction/">
+      <!-- 1. Load libraries -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
+      <script src="js/literallycanvas.js"></script>
+      <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+      <script src="node_modules/systemjs/dist/system.src.js"></script>
+      <script src="node_modules/rxjs/bundles/Rx.js"></script>
+      <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+      <script src="node_modules/angular2/bundles/router.dev.js"></script>
 
-        <link rel="icon" type="image/png" href="lib/img/favicon.png" />
-        
-         <link rel="stylesheet" href="lib/css/app.css">
-        <!-- 2. Configure SystemJS -->
-        <script>
-          System.config({
-            packages: {        
-              app: {
-                format: 'register',
-                defaultExtension: 'js'
-              }
+      <link rel="icon" type="image/png" href="lib/img/favicon.png" />
+
+      <link rel="stylesheet" href="lib/css/app.css">
+      <!-- 2. Configure SystemJS -->
+      <script>
+        System.config({
+          packages: {        
+            app: {
+              format: 'register',
+              defaultExtension: 'js'
             }
-          });
-          System.import('app/boot')
-                .then(null, console.error.bind(console));
-        </script>
-         
-      </head>
-      <!-- 3. Display the application -->
-      <body>
-     
-        <my-app>Loading...</my-app>
-      </body>
+          }
+        });
+        System.import('app/boot')
+        .then(null, console.error.bind(console));
+      </script>
+
+    </head>
+    <!-- 3. Display the application -->
+    <body onload="init();">
+
+      <my-app>Loading...</my-app>
+    </body>
     </html>
