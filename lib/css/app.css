@@ -637,7 +637,9 @@ section#howto {
   padding: 15px; }
   section#howto h2 {
     font-size: 2em;
-    color: white; }
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px; }
   section#howto h3 {
     color: white;
     margin-top: 0;
@@ -648,9 +650,10 @@ section#howto {
     font-size: 15px; }
   section#howto .row {
     display: flex;
-    align-items: flex-start; }
+    align-items: flex-start;
+    margin-bottom: 30px; }
     section#howto .row .img-wrapper {
-      width: 100%;
+      flex: 0 0 100px;
       padding-right: 10px; }
 
 .lc-options, .lc-picker {
