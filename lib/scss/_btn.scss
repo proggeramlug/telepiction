@@ -6,14 +6,16 @@
 	border: 0;
 
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 40px;
 }
 
 .btn.primary {
 
 }
 
-.btn.recap {
+.btn.view-recap {
 	background: $yellow;
 	color: black;
+
+	font-size: 40px;
 }

@@ -19,12 +19,12 @@ body {
 }
 #wrapper {
 	width:100%;
-	max-width: 670px;
 	margin: 0 auto;
 	position: relative;
-	background:#3dbb9b;
 
-	height:100vh;
+	// iPhone6s
+	max-width: 375px;
+	height: 667px;
 
 	box-shadow: 0 0 20px rgba(0,0,0,.5);
 	
@@ -32,4 +32,50 @@ body {
 
 img {
 	max-width: 100%;
+}
+
+section#recap {
+	background: white;
+	height: 100%;
+
+	.view-recap-wrapper {
+		position: absolute;
+		top: 10%;
+		width: 100%;
+	}
+	.view-recap {
+		.bolt {
+			width: 41px;
+		}
+	}
+
+	.new-game-wrapper {
+		position: absolute;
+		bottom: 10%;
+		width: 100%;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+.social-icons {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	img {
+		width: 53px;
+	}
+}
+
+section#start {
+	height: 100%;
+	background: $teal;
+
+	.start-game-wrapper {
+		position: absolute;
+		bottom: 10%;
+		width: 100%;
+	}
 }

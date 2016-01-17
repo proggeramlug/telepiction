@@ -1,17 +1,43 @@
 
- <img id="logo" src="lib/img/logo.png">
- <div class="form-group">
-  <label for="alterEgo">timed game?</label>
-  <input type="checkbox"  class="form-control"
-    [(ngModel)]="model.timed">
-</div>
-    <div class="form-group">
-  <label for="power">Number of players </label>
-  <select class="form-control"  required
-    [(ngModel)]="model.numberOfPlayers" >
-    <option *ngFor="#p of playerNumbers" [value]="p">{{p}}</option>
-  </select>
-    </div>
-    <button (click)="startGame()" class="btn primary">Start</button>
 
-    <button class="btn recap">Recap</button>
+<section id="start">
+	<img id="logo" src="lib/img/logo.png">
+	<div class="form-group">
+		<label for="alterEgo">timed game?</label>
+		<input type="checkbox"  class="form-control"
+		[(ngModel)]="model.timed">
+	</div>
+	<div class="form-group">
+		<label for="power">Number of players </label>
+		<select class="form-control"  required
+		[(ngModel)]="model.numberOfPlayers" >
+		<option *ngFor="#p of playerNumbers" [value]="p">{{p}}</option>
+	</select>
+	</div>
+	
+	<div class="center start-game-wrapper">
+		<button (click)="startGame()" class="btn primary">Start</button>
+	</div>
+</section>
+
+<!--
+<section id="recap">
+	<div class="super-imposed-content">
+		<div class="center view-recap-wrapper">
+			<button class="btn view-recap"><img src="lib/img/lightening-bolt.png" alt="" class="bolt"> Recap</button>
+		</div>
+
+		<div class="social-icons center">
+			<a href=""><img src="lib/img/twitter.png" alt="" style="padding-right:20px;"></a>
+			<a href=""><img src="lib/img/facebook.png" alt=""></a>
+		</div>
+
+		<div class="center new-game-wrapper">
+			<button class="btn new-game">New Game</button>
+		</div>
+	</div>
+
+
+	<img src="http://www.placecage.com/375/667" alt="" class="photo_bg faded">
+</section>
+-->

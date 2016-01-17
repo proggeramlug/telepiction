@@ -249,11 +249,12 @@ textarea {
   padding: 15px;
   border: 0;
   font-weight: bold;
-  font-size: 24px; }
+  font-size: 40px; }
 
-.btn.recap {
+.btn.view-recap {
   background: #ffde17;
-  color: black; }
+  color: black;
+  font-size: 40px; }
 
 #go_forward {
   width: 41px;
@@ -269,20 +270,29 @@ textarea {
 
 .photo_bg {
   width: 100%;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 9; }
+  .photo_bg.faded {
+    filter: grayscale(100%);
+    opacity: .1; }
 
 .super-imposed-content {
   z-index: 99;
-  position: relative; }
+  position: relative;
+  height: 100%; }
 
 .draw-prompt {
   position: absolute;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-weight: normal;
+  color: white;
+  background: rgba(0, 0, 0, 0.8); }
 
 body {
   margin: 0;
@@ -292,12 +302,43 @@ body {
 
 #wrapper {
   width: 100%;
-  max-width: 670px;
   margin: 0 auto;
   position: relative;
-  background: #3dbb9b;
-  height: 100vh;
+  max-width: 375px;
+  height: 667px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
 
 img {
   max-width: 100%; }
+
+section#recap {
+  background: white;
+  height: 100%; }
+  section#recap .view-recap-wrapper {
+    position: absolute;
+    top: 10%;
+    width: 100%; }
+  section#recap .view-recap .bolt {
+    width: 41px; }
+  section#recap .new-game-wrapper {
+    position: absolute;
+    bottom: 10%;
+    width: 100%; }
+
+.center {
+  text-align: center; }
+
+.social-icons {
+  position: absolute;
+  top: 40%;
+  width: 100%; }
+  .social-icons img {
+    width: 53px; }
+
+section#start {
+  height: 100%;
+  background: #3dbb9b; }
+  section#start .start-game-wrapper {
+    position: absolute;
+    bottom: 10%;
+    width: 100%; }
