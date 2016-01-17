@@ -633,7 +633,13 @@ section#recap .new-game-wrapper {
   bottom: 10%;
   width: 100%; }
 
+.lc-options, .lc-picker {
+  display: none; }
+
 .lc-color-pickers {
+  display: none; }
+
+.lc-options, .lc-picker {
   display: none; }
 
 .literally {
