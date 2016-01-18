@@ -588,10 +588,10 @@ a.btn {
   position: relative;
   height: 100%; }
 
-.bg-white {
+.bg-white, section#animation div:nth-child(even) {
   background: white; }
 
-.bg-teal {
+.bg-teal, section#animation div:nth-child(odd) {
   background: #3dbb9b;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3dbb9b+0,259e80+100 */
   background: -moz-linear-gradient(-45deg, #3dbb9b 0%, #259e80 100%);
@@ -710,15 +710,16 @@ section#howto {
       flex: 0 0 70px;
       padding-right: 10px; }
 
-section#anim-text {
+section#animation {
   display: table;
   width: 100%; }
-  section#anim-text .phrase {
+  section#animation div:nth-child(odd) {
     display: table-cell;
     vertical-align: middle;
     padding: 15px;
     font-size: 50px;
-    color: white; }
+    color: white;
+    font-weight: bold; }
 
 .lc-options, .lc-picker {
   display: none; }

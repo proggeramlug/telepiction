@@ -239,15 +239,24 @@ section#howto {
 // ****************************
 // PAGE: Animation Text
 // ****************************
-section#anim-text {
+section#animation {
 	display: table;
     width: 100%;
 
-	.phrase {
-		display: table-cell;
+	// TEXT DIV
+    div:nth-child(odd) {
+    	@extend .bg-teal;
+
+    	display: table-cell;
 	    vertical-align: middle;
 	    padding: 15px;
 	    font-size: 50px;
 	    color: white;
-	}
+	    font-weight: bold;
+    }
+
+	// PHOTO DIV
+    div:nth-child(even) {
+    	@extend .bg-white;
+    }
 }

@@ -1,3 +1,7 @@
 
-	<div *ngFor="#img of rounds #i=index" [class.hidden]="currentStep!=i" id="ani{{i}}" alt="" class="animationFrame"><span *ngIf="i%2==0" id="text{{i}}">{{img}}</span></div>
-	
+<section id="animation" class="fill-page">
+	<div *ngFor="#img of rounds #i=index" [class.hidden]="currentStep!=i" id="ani{{i}}" class="animationFrame fill-page">
+		<span *ngIf="i%2==0" id="text{{i}}" class="phrase">{{img}}</span>
+	</div>
+</section>
+
