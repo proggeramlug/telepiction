@@ -45,6 +45,12 @@
 
 .bg-teal {
 	background: $teal;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3dbb9b+0,259e80+100 */
+	background: -moz-linear-gradient(-45deg,  rgba(61,187,155,1) 0%, rgba(37,158,128,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  rgba(61,187,155,1) 0%,rgba(37,158,128,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  rgba(61,187,155,1) 0%,rgba(37,158,128,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3dbb9b', endColorstr='#259e80',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 .fill-page {
@@ -112,6 +118,14 @@ section#write-screen {
 	    overflow: hidden;
 	    outline: none;
 	    resize: none;
+	}
+
+	.ideas {
+		font-weight: bold;
+		font-size: 33px;
+		padding: 0 15px;
+		color: #D1D3D4;
+		p { margin: 0;}
 	}
 }
 
@@ -219,5 +233,21 @@ section#howto {
 		.text-wrapper {
 			
 		}
+	}
+}
+
+// ****************************
+// PAGE: Animation Text
+// ****************************
+section#anim-text {
+	display: table;
+    width: 100%;
+
+	.phrase {
+		display: table-cell;
+	    vertical-align: middle;
+	    padding: 15px;
+	    font-size: 50px;
+	    color: white;
 	}
 }

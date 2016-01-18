@@ -1,6 +1,15 @@
 
 <section id="write-screen" class="bg-white fill-page">
 	<div class="super-imposed-content">
+		<div class="ideas" [class.hidden]="imageToSee">
+			<p>Song Lyrics...</p>
+			<p>Movie Titles...</p>
+			<p>Quotes...</p>
+			<p>Cliches...</p>
+			<p>Celebrities...</p>
+			<p>Funny Situations...</p>
+		</div>
+
 		<textarea [(ngModel)]="text" name="" cols="30" rows="1" placeholder="Write something" class="write-input"></textarea>
 		<button (click)="nextStep()" id="go_forward"><img src="lib/img/icon_forward.png"></button>
 	</div>

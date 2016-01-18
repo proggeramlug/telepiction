@@ -538,8 +538,8 @@ textarea {
   font-family: 'aileron';
   src: url("../fonts/aileron-bold-webfont.eot");
   src: url("../fonts/aileron-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aileron-bold-webfont.woff2") format("woff2"), url("../fonts/aileron-bold-webfont.woff") format("woff"), url("../fonts/aileron-bold-webfont.ttf") format("truetype"), url("../fonts/aileron-bold-webfont.svg#aileronbold") format("svg");
-  font-weight: normal;
-  font-style: bold; }
+  font-weight: bold;
+  font-style: normal; }
 .btn {
   background: black;
   color: white;
@@ -592,7 +592,16 @@ a.btn {
   background: white; }
 
 .bg-teal {
-  background: #3dbb9b; }
+  background: #3dbb9b;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3dbb9b+0,259e80+100 */
+  background: -moz-linear-gradient(-45deg, #3dbb9b 0%, #259e80 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #3dbb9b 0%, #259e80 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #3dbb9b 0%, #259e80 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3dbb9b', endColorstr='#259e80',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
 
 .fill-page {
   height: 100%; }
@@ -636,6 +645,13 @@ section#write-screen .write-input {
   overflow: hidden;
   outline: none;
   resize: none; }
+section#write-screen .ideas {
+  font-weight: bold;
+  font-size: 33px;
+  padding: 0 15px;
+  color: #D1D3D4; }
+  section#write-screen .ideas p {
+    margin: 0; }
 
 section#pass-screen #pass-animation {
   margin: 0 auto;
@@ -693,6 +709,16 @@ section#howto {
     section#howto .row .img-wrapper {
       flex: 0 0 70px;
       padding-right: 10px; }
+
+section#anim-text {
+  display: table;
+  width: 100%; }
+  section#anim-text .phrase {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+    font-size: 50px;
+    color: white; }
 
 .lc-options, .lc-picker {
   display: none; }
