@@ -42,7 +42,11 @@ System.register(['angular2/core', 'angular2/router', '../game/game.service'], fu
                     console.log("animation steps:" + (this._service.getGame().roundNumber * 2 + 1));
                     console.log("images saved:" + (this._service.getGame().images.length));
                     for (i = 0; i < (this._service.getGame().roundNumber * 2 + 1); i++) {
-                        this.rounds[i] = this._service.getGame().images[Math.floor(i / 2)].describingWord;
+                        if (this._service.getGame().images[Math.floor(i / 2)] == undefined) {
+                            console.log("Undefined I:" + i);
+                        }
+                        else
+                            this.rounds[i] = this._service.getGame().images[Math.floor(i / 2)].describingWord;
                     }
                     setTimeout(function () { _this.initGraphics(); }, 1000);
                     this.timer = setTimeout(function () { _this.nextAniStep(); }, 2000);

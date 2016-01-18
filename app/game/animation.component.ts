@@ -28,6 +28,11 @@ import { GameService } from '../game/game.service';
     	console.log("images saved:"+(this._service.getGame().images.length));
     	for (i = 0; i < (this._service.getGame().roundNumber*2+1); i++)
     	{
+    		if (this._service.getGame().images[Math.floor(i/2)] == undefined)
+    		{
+    			console.log("Undefined I:"+i);
+    		}
+    		else 
     		this.rounds[i] = this._service.getGame().images[Math.floor(i/2)].describingWord;
     	}
     	setTimeout(() => { this.initGraphics() }, 1000);
