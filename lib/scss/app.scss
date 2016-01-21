@@ -59,7 +59,7 @@ img {
 
 @media only screen  
 	and (max-device-width: 900px)
-  and (orientation: landscape) { 
+  and (min-aspect-ratio: 13/9) { 
 	.no-landscape {
 		display: block;
 
